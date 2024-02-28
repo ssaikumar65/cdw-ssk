@@ -14,7 +14,6 @@ function App() {
     const fetchData = async () => {
       const res = await fetch(URL);
       const result = (await res.json()) as User[];
-
       if (result) setUsers(result);
     };
     fetchData();

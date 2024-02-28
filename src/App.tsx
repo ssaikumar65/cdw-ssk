@@ -4,7 +4,7 @@ import SearchButton from "./components/SearchButton";
 import TeamSection from "./components/TeamSection";
 import useDebounce from "./hooks/useDebounce";
 import { AdminUser, MemberUser, User } from "./lib/types";
-
+const URL = import.meta.env.VITE_MOCK_API;
 function App() {
   const [users, setUsers] = useState<User[] | null>(null);
   const [filteredUsers, setFilteredUsers] = useState<User[] | null>(null);
@@ -12,9 +12,7 @@ function App() {
   const debouncedSearch = useDebounce(search);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(
-        "https://mocki.io/v1/ddb7e0a8-e218-4e36-b1be-b902cdb1c098",
-      );
+      const res = await fetch(URL);
       const result = (await res.json()) as User[];
 
       if (result) setUsers(result);

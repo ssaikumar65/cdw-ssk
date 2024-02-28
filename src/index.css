@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border m-0 p-0;
+}
+html,body,#root{
+  @apply h-full
+}
+body {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Poppins";
+  @apply bg-zinc-50 text-black;
+}
+
+::-webkit-scrollbar {
+  @apply w-2 h-3;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-black;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
